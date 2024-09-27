@@ -5,6 +5,7 @@ function CategoryItem(props){
     return (
         <View style={styles.container}>
             <Pressable
+                onPress={props.onPress}
                 android_ripple={{ color:'#cccccc' }}
                 style={ ( {pressed} ) =>    [ styles.button, { backgroundColor:props.color }, pressed?styles.buttonPressed:null ]  } >
                 <View style={styles.innerContainer}>
