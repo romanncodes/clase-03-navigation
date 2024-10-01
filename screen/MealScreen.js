@@ -1,21 +1,28 @@
 import { View, Text, FlatList } from "react-native"
-import { useRoute } from "@react-navigation/native"
-import { MEALS } from "../data/dummy";
+import { useRoute, useNavigation } from "@react-navigation/native"
+import { MEALS, CATEGORIES } from "../data/dummy";
+import MealItem from "../components/MealItem";
 
 function MealScreen(){
 
     const route = useRoute();
+    const navigation = useNavigation();
     const id = route.params.categoryId
 
     const meals = MEALS.filter( (cat) =>  cat.categoryIds.includes(id))
 
+    const catTitle = CATEGORIES.find((cat) => cat.id == id).title;
+
+    navigation.setOptions({title:catTitle})
 
     function renderMealItem(obj){
-        return (
-            <View>
-                <Text>{obj.item.title}</Text>
-            </View>
-        )
+        return <MealItem
+                   title={obj.item.title}
+                   imageUrl={obj.item.imageUrl} 
+                   affordability={obj.item.affordability}
+                   duration={obj.item.duration}
+                   complexity={obj.item.complexity}
+                />
     }
 
 
