@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     container:{
         margin:16,
         borderRadius:8,
+        backgroundColor:'#ffffff',
         elevation:4,
         shadowColor:'#000000',
         shadowOpacity:0.25,
