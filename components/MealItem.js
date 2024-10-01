@@ -12,6 +12,7 @@ function MealItem(props){
             <Pressable 
                 android_ripple={{color:'#cccccc'}}
                 style={ ({pressed})=> pressed ? styles.pressableButton:null}
+                onPress={props.onPress}
             >
                 <View style={styles.innerContainer}>
                     <View>

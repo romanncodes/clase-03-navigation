@@ -16,12 +16,18 @@ function MealScreen(){
     navigation.setOptions({title:catTitle})
 
     function renderMealItem(obj){
+
+        function onPressHandler(){
+            navigation.navigate('MealDetail', {mealId:obj.item.id})
+        }
+
         return <MealItem
                    title={obj.item.title}
                    imageUrl={obj.item.imageUrl} 
                    affordability={obj.item.affordability}
                    duration={obj.item.duration}
                    complexity={obj.item.complexity}
+                   onPress={onPressHandler}
                 />
     }
 
