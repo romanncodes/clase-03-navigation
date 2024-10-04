@@ -45,7 +45,7 @@ export default MealDetailScreen;
 const styles = StyleSheet.create({
     image:{
         height:300,
-        width:'100%'
+        width:'100%',
     },
     title:{
         fontWeight:'bold',
