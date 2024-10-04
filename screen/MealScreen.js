@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { View, Text, FlatList } from "react-native"
 import { useRoute, useNavigation } from "@react-navigation/native"
 import { MEALS, CATEGORIES } from "../data/dummy";
@@ -13,7 +14,13 @@ function MealScreen(){
 
     const catTitle = CATEGORIES.find((cat) => cat.id == id).title;
 
-    navigation.setOptions({title:catTitle})
+    
+    useLayoutEffect( ()=>{
+        navigation.setOptions({title:catTitle})
+    } , [ navigation, catTitle ])
+
+    
+
 
     function renderMealItem(obj){
 
